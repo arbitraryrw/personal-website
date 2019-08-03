@@ -1,8 +1,8 @@
 {
-  "name": "arbitraryrw.github.io",
+  "name": "personal-website",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://arbitraryrw.github.io/personal-website/",
+  "homepage": "https://nik.re",
   "dependencies": {
     "gh-pages": "^2.0.1",
     "react": "^16.8.6",
@@ -14,7 +14,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "cp ./CNAME ./build && gh-pages -d build",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

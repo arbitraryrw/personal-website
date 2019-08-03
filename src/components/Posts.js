@@ -4,7 +4,7 @@ class Posts extends React.Component {
   render(){
     return (
       <div>
-        <h1>Coming soon..</h1>
+        <h1>WIP, coming soon..</h1>
       </div>
     );
   }

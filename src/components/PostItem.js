@@ -23,17 +23,20 @@ export class PostItem extends Component {
       textDecoration: this.props.post.complete ?
       'line-through' : 'none'
     }
-
   }
 
-  render(){
-    return(
 
+
+  render(){
+
+    const { id, title } = this.props.post;
+
+    return(
       // <div style= {{backgroundColor: '#ef42f5'}}>
       // <div style= {itemStyle}>
       <div style= {this.getStyle()}>
-        <input type="checkbox" onChange={this.markComplete}/> 
-        <h1>{this.props.post.title }</h1>
+        <input type="checkbox" onChange={this.props.markComplete.bind(this, id)} />
+        <h1>{title }</h1>
       </div>
     )
   }

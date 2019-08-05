@@ -17,7 +17,7 @@ class App extends React.Component {
       {
         id:2,
         title: 'Second post',
-        complete:false
+        complete:true
       },
       {
         id:3,

@@ -1,12 +1,11 @@
 import React from 'react';
+import PostItem from './PostItem';
 
 class Posts extends React.Component {
   render(){
-    return (
-      <div>
-        <h1>WIP, coming soon..</h1>
-      </div>
-    );
+    return this.props.posts.map((post) => (
+      <PostItem/>
+    ));
   }
 }
 

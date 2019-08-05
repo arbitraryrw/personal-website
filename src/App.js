@@ -28,11 +28,10 @@ class App extends React.Component {
   }
 
   render(){
-    console.log(this.state.posts)
     return (
       <div className="App">
         <header className="App-header">
-          <Posts />
+          <Posts posts={this.state.posts} />
           <img src={logo} className="App-logo" alt="logo" />
           <a
             className="App-link"

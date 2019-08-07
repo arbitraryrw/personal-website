@@ -1,32 +1,22 @@
 import React from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom'
+
+import About from './components/pages/About';
 
 import Header from './components/layout/Header';
 import Posts from './components/Posts';
 import AddPost from './components/AddPost';
 
+import uuid from 'uuid';
+
 import logo from './logo.svg';
 import './App.css';
+import axios from 'axios'
 
 class App extends React.Component {
 
   state = {
-    posts: [
-      {
-        id:1,
-        title: 'First post',
-        complete:false
-      },
-      {
-        id:2,
-        title: 'Second post',
-        complete:false
-      },
-      {
-        id:3,
-        title: 'Third post',
-        complete:false
-      }
-    ]
+    posts: []
   }
 
   // The reason the = blah => syntax is used is to save you from having to
@@ -34,7 +24,7 @@ class App extends React.Component {
   markComplete = (id) => {
     this.setState({posts: this.state.posts.map(post => {
       if (post.id === id){
-        post.complete = !post.complete
+        post.completed = !post.completed
       }
       return post;
 
@@ -51,28 +41,48 @@ class App extends React.Component {
     console.log(id);
   }
 
+  addPost = (title) => {
+    console.log(title);
+    const newPost = {
+      id: uuid.v4(),
+      title: title,
+      completed: false
+    }
+    this.setState({ posts : [...this.state.posts, newPost]})
+  }
+
+  componentDidMount(){
+    axios.get('https://jsonplaceholder.typicode.com/todos').then( resp => console.log(resp.data))
+  }
+
   render(){
     return (
-      <div className="App">
-        <div className="container">
+      <Router>
+        <div className="App">
+          <div className="container">
 
-          <Header />
-          <AddPost />
-          <Posts posts={this.state.posts} markComplete={this.markComplete} deletePost={this.deletePost}/>
+            <Header />
+            <Route exact path="/" render={props=>(
+              <React.Fragment>
+                <AddPost addPost={this.addPost}/>
+                <Posts posts={this.state.posts} markComplete={this.markComplete} deletePost={this.deletePost}/>
+                <img src={logo} className="App-logo" alt="logo" />
+                <a
+                  className="App-link"
+                  href="https://github.com/arbitraryrw"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Github
+                </a>
+              </React.Fragment>
+            )} />
 
-          <img src={logo} className="App-logo" alt="logo" />
-          <a
-            className="App-link"
-            href="https://github.com/arbitraryrw"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Github
-          </a>
+            <Route path="/about" component={About} />
 
-
+          </div>
         </div>
-      </div>
+      </Router>
     );
   }
 }

@@ -20,7 +20,7 @@ export class PostItem extends Component {
       background: '#008563',
       padding: '10px',
       borderBottom: '1px #ccc dotted',
-      textDecoration: this.props.post.complete ?
+      textDecoration: this.props.post.completed ?
       'line-through' : 'none'
     }
   }

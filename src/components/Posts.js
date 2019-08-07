@@ -6,7 +6,7 @@ class Posts extends React.Component {
 
   render(){
     return this.props.posts.map((post) => (
-      <PostItem key={post.id} post={post} markComplete={this.props.markComplete}/>
+      <PostItem key={post.id} post={post} markComplete={this.props.markComplete} deletePost={this.props.deletePost}/>
     ));
   }
 }

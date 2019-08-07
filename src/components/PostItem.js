@@ -36,7 +36,12 @@ export class PostItem extends Component {
       // <div style= {itemStyle}>
       <div style= {this.getStyle()}>
         <input type="checkbox" onChange={this.props.markComplete.bind(this, id)} />
-        <h1>{title }</h1>
+        <h1>
+        { title }
+        <button
+        onClick={this.props.deletePost.bind(this,id)}
+        style = {btnStyle}> x </button>
+        </h1>
       </div>
     )
   }
@@ -47,8 +52,14 @@ PostItem.propTypes = {
   post: PropTypes.object.isRequired
 }
 
-const itemStyle = {
-  backgroundColor: '#ef42f5'
+const btnStyle = {
+  backgroundColor: '#ff0000',
+  color: '#fff',
+  border: 'none',
+  padding: '5px 10px',
+  borderRadius: "50%",
+  cursor: 'poiner',
+  float: 'right'
 }
 
 export default PostItem;

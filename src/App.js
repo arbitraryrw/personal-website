@@ -30,7 +30,6 @@ class App extends React.Component {
   // The reason the = blah => syntax is used is to save you from having to
   //write method.bind(this) to pass in the context for this
   markComplete = (id) => {
-    console.log(id);
     this.setState({posts: this.state.posts.map(post => {
       if (post.id === id){
         post.complete = !post.complete
@@ -40,11 +39,21 @@ class App extends React.Component {
     }) })
   }
 
+  deletePost = (id) => {
+    //The filter method is a high order array method, it conditionally returns
+    //an array. So filter iterates through the state object and returns on the
+    //condition. We only return posts that don't match the id that's passed becase
+    //we want to delete that. ... is the spread operator, this copies everything
+    //that is currently there
+    this.setState({posts: [...this.state.posts.filter(post => post.id !== id)]})
+    console.log(id);
+  }
+
   render(){
     return (
       <div className="App">
         <header className="App-header">
-          <Posts posts={this.state.posts} markComplete={this.markComplete}/>
+          <Posts posts={this.state.posts} markComplete={this.markComplete} deletePost={this.deletePost}/>
 
           <img src={logo} className="App-logo" alt="logo" />
           <a

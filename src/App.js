@@ -1,6 +1,8 @@
 import React from 'react';
 
+import Header from './components/layout/Header';
 import Posts from './components/Posts';
+import AddPost from './components/AddPost';
 
 import logo from './logo.svg';
 import './App.css';
@@ -52,7 +54,10 @@ class App extends React.Component {
   render(){
     return (
       <div className="App">
-        <header className="App-header">
+        <div className="container">
+
+          <Header />
+          <AddPost />
           <Posts posts={this.state.posts} markComplete={this.markComplete} deletePost={this.deletePost}/>
 
           <img src={logo} className="App-logo" alt="logo" />
@@ -66,7 +71,7 @@ class App extends React.Component {
           </a>
 
 
-        </header>
+        </div>
       </div>
     );
   }

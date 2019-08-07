@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 
 export class AddPost extends Component {
 
@@ -43,6 +44,11 @@ export class AddPost extends Component {
       </form>
     )
   }
+}
+
+// PropTypes
+AddPost.propTypes = {
+  addPost: PropTypes.func.isRequired
 }
 
 export default AddPost

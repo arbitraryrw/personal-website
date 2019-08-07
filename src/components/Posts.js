@@ -13,7 +13,9 @@ class Posts extends React.Component {
 
 // PropTypes
 Posts.propTypes = {
-  posts: PropTypes.array.isRequired
+  posts: PropTypes.array.isRequired,
+  markComplete: PropTypes.func.isRequired,
+  deletePost: PropTypes.func.isRequired
 }
 
 export default Posts;

@@ -16,7 +16,23 @@ import axios from 'axios'
 class App extends React.Component {
 
   state = {
-    posts: []
+    posts: [
+      {
+        id: uuid.v4(),
+        title: "Post 1",
+        completed: false
+      },
+      {
+        id: uuid.v4(),
+        title: "Post 2",
+        completed: false
+      },
+      {
+        id: uuid.v4(),
+        title: "Post 3",
+        completed: false
+      }
+    ]
   }
 
   // The reason the = blah => syntax is used is to save you from having to
@@ -38,21 +54,33 @@ class App extends React.Component {
     //we want to delete that. ... is the spread operator, this copies everything
     //that is currently there
     this.setState({posts: [...this.state.posts.filter(post => post.id !== id)]})
-    console.log(id);
+    // console.log(id);
+
+    // Delete API requires id to delete
+    // axios.delete(`https://jsonplaceholder.typicode.com/todos/${id}`)
+    // .then(resp => this.setState({posts: [...this.state.posts.filter(post => post.id !== id)]}))
   }
 
   addPost = (title) => {
-    console.log(title);
     const newPost = {
       id: uuid.v4(),
       title: title,
       completed: false
     }
     this.setState({ posts : [...this.state.posts, newPost]})
+
+    // console.log(title)
+    // axios.post('https://jsonplaceholder.typicode.com/todos', {
+    //   title: title,
+    //   completed: false
+    // })
+    // .then(resp => this.setState({ posts : [...this.state.posts, resp.data]}));
+
   }
 
   componentDidMount(){
-    axios.get('https://jsonplaceholder.typicode.com/todos').then( resp => console.log(resp.data))
+    axios.get('https://jsonplaceholder.typicode.com/todos?_limit=10').then( resp => this.setState({ posts: resp.data}));
+    // axios.get('https://jsonplaceholder.typicode.com/todos?_limit=10').then( resp => console.log(resp.data));
   }
 
   render(){

@@ -49,7 +49,9 @@ export class PostItem extends Component {
 
 // PropTypes
 PostItem.propTypes = {
-  post: PropTypes.object.isRequired
+  post: PropTypes.object.isRequired,
+  markComplete: PropTypes.func.isRequired,
+  deletePost: PropTypes.func.isRequired
 }
 
 const btnStyle = {

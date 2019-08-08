@@ -7,12 +7,14 @@ class Banner extends React.Component {
   }
 
   render(){
+    // console.log("content: " + this.props.banner);
     return(
 
-      <button onClick={this.printLetterByLetter}>
-        Dummy value
-      </button>
+      this.props.banner.map((banner) => (
 
+      <h1> { banner } </h1>
+
+    ))
 
     )
   }

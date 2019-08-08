@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 import About from './components/pages/About';
 
 import Header from './components/layout/Header';
+import Banner from './components/layout/Banner';
 import Posts from './components/Posts';
 import AddPost from './components/AddPost';
 
@@ -79,7 +80,7 @@ class App extends React.Component {
   }
 
   componentDidMount(){
-    axios.get('https://jsonplaceholder.typicode.com/todos?_limit=10').then( resp => this.setState({ posts: resp.data}));
+    axios.get('https://jsonplaceholder.typicode.com/todos?_limit=1').then( resp => this.setState({ posts: resp.data}));
     // axios.get('https://jsonplaceholder.typicode.com/todos?_limit=10').then( resp => console.log(resp.data));
   }
 
@@ -90,6 +91,7 @@ class App extends React.Component {
           <div className="container">
 
             <Header />
+            <Banner />
             <Route exact path="/" render={props=>(
               <React.Fragment>
                 <AddPost addPost={this.addPost}/>

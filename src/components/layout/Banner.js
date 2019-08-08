@@ -2,19 +2,27 @@ import React from 'react';
 
 class Banner extends React.Component {
 
-  printLetterByLetter = (e) => {
-    console.log("yaay")
+  printLetterByLetter = (word) => {
+    return(
+
+      word[0]
+    )
+  }
+
+  componentDidMount() {
+    this.printLetterByLetter("hi");
   }
 
   render(){
     // console.log("content: " + this.props.banner);
     return(
 
-      this.props.banner.map((banner) => (
+      this.props.banner.map((banner, index) => (
 
-      <h1> { banner } </h1>
+      <p> { this.printLetterByLetter(banner) } </p>
 
     ))
+
 
     )
   }

@@ -20,7 +20,7 @@ class App extends React.Component {
     posts: [
       {
         id: uuid.v4(),
-        title: "Post 1",
+        title: "Builder",
         completed: false
       },
       {
@@ -35,9 +35,9 @@ class App extends React.Component {
       }
     ],
     bannerText: [
-      "line 1",
-      "line 2",
-      "line 3"
+      "I like to build",
+      "line2",
+      "line3"
     ]
   }
 

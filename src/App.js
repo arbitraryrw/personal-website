@@ -5,14 +5,15 @@ import About from './components/pages/About';
 
 import Header from './components/layout/Header';
 import Banner from './components/layout/Banner';
+import SocialMediaIcons from './components/layout/SocialMediaIcons';
 // import Posts from './components/Posts';
 // import AddPost from './components/AddPost';
 
 import uuid from 'uuid';
+import axios from 'axios'
 
 import logo from './logo.svg';
 import './App.css';
-import axios from 'axios'
 
 class App extends React.Component {
 
@@ -97,6 +98,8 @@ class App extends React.Component {
               <React.Fragment>
 
               <Banner/>
+              <SocialMediaIcons/>
+
               {/*
                 <AddPost addPost={this.addPost}/>
                 <Posts posts={this.state.posts} markComplete={this.markComplete} deletePost={this.deletePost}/>

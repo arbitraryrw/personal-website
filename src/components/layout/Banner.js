@@ -91,24 +91,25 @@ class Banner extends React.Component {
     Security Specialist / Developer / Reverser Engineer
     </p>
 
+
     <ul style = {socialMediaStyle} >
       <li style = {listItemStyle}>
-        <a href="#">
-        Twitter
+        <a href="https://twitter.com/arbitraryrw">
+          twitter
         </a>
       </li>
       <li  style = {listItemStyle}>
-        <a href="#">
+        <a href="https://github.com/arbitraryrw">
         Github
         </a>
       </li>
       <li  style = {listItemStyle}>
-        <a href="#">
+        <a href="https://www.linkedin.com/in/nikola-cucakovic-623aa677/">
         LinkedIn
         </a>
       </li>
       <li  style = {listItemStyle}>
-        <a href="#">
+        <a href="https://www.instagram.com/nikapotomus/">
         Instagram
         </a>
       </li>
@@ -127,11 +128,9 @@ const listItemStyle = {
 
 const socialMediaStyle = {
   marginTop: "10px",
-  color: "#fff",
   padding:"0px",
   listStyle:"none",
   // background: '#333',
-  color: '#fff',
   listStyleType: "none",
   display:"flex"
 }

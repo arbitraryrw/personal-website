@@ -35,9 +35,9 @@ class App extends React.Component {
       }
     ],
     bannerText: [
-      "I like to build",
-      "line2",
-      "line3"
+      "I build things",
+      "I break things",
+      "I solve problems"
     ]
   }
 

@@ -27,7 +27,7 @@ class Banner extends React.Component {
 
     if (!isDeleting && text === fullText) {
 
-      setTimeout(() => this.setState({ isDeleting: true }), 500);
+      setTimeout(() => this.setState({ isDeleting: true }), 1500);
 
     } else if (isDeleting && text === '') {
 
@@ -56,7 +56,7 @@ class Banner extends React.Component {
     //
     // ))
 
-    <p style= {{backgroundColor: '#ef42f5', minWidth: '100px'}} >{ this.props.heading }&nbsp;
+    <p style= {{minWidth: '100px'}} >{ this.props.heading }&nbsp;
       <span>{ this.state.text }</span>
       <span id="cursor"></span>
     </p>

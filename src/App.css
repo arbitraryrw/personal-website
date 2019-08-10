@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css?family=VT323');
+
 .App {
-  text-align: center;
+  text-align: left;
 }
 
 .App-logo {
@@ -13,7 +15,7 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: left;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
@@ -32,10 +34,8 @@
   }
 }
 
-
-
-
 .container{
+  font-family: 'Menlo-Regular', monospace;
   padding: 0 1rem;
   background-color: #282c34;
   font-size: calc(10px + 2vmin);
@@ -60,18 +60,8 @@
   background: #666;
 }
 
-
-
-/* @import url('https://fonts.googleapis.com/css?family=VT323');
-
-body {
-  font-family: 'Menlo-Regular', monospace;
-  padding: 1em 2em;
-} */
-
-
 #cursor {
-  border-left: .1em solid #00FF41;
+  border-left: .2em solid;
   animation: blink 1s steps(1) infinite;
 }
 

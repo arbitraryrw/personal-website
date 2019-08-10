@@ -6,7 +6,8 @@ class Banner extends React.Component {
   super(props);
 
   this.state = {
-    text: 'example',
+    firstRun:true,
+    text: '',
     isDeleting: false,
     loopNum: 0,
     typingSpeed: 150
@@ -14,11 +15,19 @@ class Banner extends React.Component {
 }
 
   handleType = () => {
-    console.log(this.props.banner)
+    // console.log(this.props.banner)
     const dataText  = this.props.banner;
-    const { isDeleting, loopNum, text, typingSpeed } = this.state;
+    const { firstRun, isDeleting, loopNum, text, typingSpeed } = this.state;
     const i = loopNum % dataText.length;
-    const fullText = dataText[i];
+    // console.log(i)
+    let fullText = dataText[i];
+
+
+    this.setState({firstRun: firstRun ? false: false});
+
+    if(firstRun){
+      fullText = "Hi, I'm Nikola";
+    }
 
     this.setState({
       text: isDeleting ? fullText.substring(0, text.length - 1) : fullText.substring(0, text.length + 1),
@@ -29,7 +38,7 @@ class Banner extends React.Component {
 
       setTimeout(() => this.setState({ isDeleting: true }), 1500);
 
-    } else if (isDeleting && text === '') {
+    } else if (isDeleting && text.length < 1) {
 
       this.setState({
         isDeleting: false,
@@ -55,15 +64,59 @@ class Banner extends React.Component {
     //   <p key={index} > { this.printLetterByLetter(banner) } </p>
     //
     // ))
-
-    <p style= {{minWidth: '100px'}} >{ this.props.heading }&nbsp;
+    <div>
+    <p style= {{minWidth: '100px', padding:"0", marginBottom:"5px"}} >
       <span>{ this.state.text }</span>
       <span id="cursor"></span>
     </p>
 
+    <p style= {{minWidth: '100px', marginTop:"0"}}>
+    Security Specialist / Developer / Reverser
+    </p>
 
+    <ul style = {socialMediaStyle} >
+      <li style = {listItemStyle}>
+        <a href="#">
+        Twitter
+        </a>
+      </li>
+      <li  style = {listItemStyle}>
+        <a href="#">
+        Github
+        </a>
+      </li>
+      <li  style = {listItemStyle}>
+        <a href="#">
+        LinkedIn
+        </a>
+      </li>
+      <li  style = {listItemStyle}>
+        <a href="#">
+        Git
+        </a>
+      </li>
+    </ul>
+
+
+    </div>
     )
   }
+}
+
+const listItemStyle = {
+   marginRight:"20px",
+   float: "left"
+}
+
+const socialMediaStyle = {
+  marginTop: "10px",
+  color: "#fff",
+  padding:"0px",
+  listStyle:"none",
+  background: '#333',
+  color: '#fff',
+  listStyleType: "none",
+  display:"flex"
 }
 
 export default Banner;

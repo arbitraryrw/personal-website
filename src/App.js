@@ -5,8 +5,8 @@ import About from './components/pages/About';
 
 import Header from './components/layout/Header';
 import Banner from './components/layout/Banner';
-import Posts from './components/Posts';
-import AddPost from './components/AddPost';
+// import Posts from './components/Posts';
+// import AddPost from './components/AddPost';
 
 import uuid from 'uuid';
 
@@ -96,20 +96,17 @@ class App extends React.Component {
           <div className="container">
 
             <Header />
-            <Banner banner={this.state.bannerText}/>
+
             <Route exact path="/" render={props=>(
+
               <React.Fragment>
+
+              <Banner banner={this.state.bannerText}/>
+              {/*
                 <AddPost addPost={this.addPost}/>
                 <Posts posts={this.state.posts} markComplete={this.markComplete} deletePost={this.deletePost}/>
-                <img src={logo} className="App-logo" alt="logo" />
-                <a
-                  className="App-link"
-                  href="https://github.com/arbitraryrw"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Github
-                </a>
+              {/*<img src={logo} className="App-logo" alt="logo" />*/}
+
               </React.Fragment>
             )} />
 

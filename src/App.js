@@ -13,6 +13,7 @@ import uuid from 'uuid';
 import axios from 'axios'
 
 import logo from './logo.svg';
+
 import './App.css';
 
 class App extends React.Component {
@@ -98,7 +99,6 @@ class App extends React.Component {
               <React.Fragment>
 
               <Banner/>
-              <SocialMediaIcons/>
 
               {/*
                 <AddPost addPost={this.addPost}/>

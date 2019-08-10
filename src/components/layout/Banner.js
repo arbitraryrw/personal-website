@@ -1,4 +1,5 @@
 import React from 'react';
+import SocialMediaIcons from './SocialMediaIcons';
 
 class Banner extends React.Component {
 
@@ -12,7 +13,7 @@ class Banner extends React.Component {
     loopNum: 0,
     typingSpeed: 150,
     bannerText: [
-      "Hey, I'm Nikola",
+      "Hey, I'm Nik",
       "I build things",
       "I break things",
       "I solve problems"
@@ -91,48 +92,13 @@ class Banner extends React.Component {
     Security Specialist / Developer / Reverser Engineer
     </p>
 
-
-    <ul style = {socialMediaStyle} >
-      <li style = {listItemStyle}>
-        <a href="https://twitter.com/arbitraryrw">
-          twitter
-        </a>
-      </li>
-      <li  style = {listItemStyle}>
-        <a href="https://github.com/arbitraryrw">
-        Github
-        </a>
-      </li>
-      <li  style = {listItemStyle}>
-        <a href="https://www.linkedin.com/in/nikola-cucakovic-623aa677/">
-        LinkedIn
-        </a>
-      </li>
-      <li  style = {listItemStyle}>
-        <a href="https://www.instagram.com/nikapotomus/">
-        Instagram
-        </a>
-      </li>
-    </ul>
-
+    <SocialMediaIcons/>
 
     </div>
     )
   }
 }
 
-const listItemStyle = {
-   marginRight:"20px",
-   float: "left"
-}
 
-const socialMediaStyle = {
-  marginTop: "10px",
-  padding:"0px",
-  listStyle:"none",
-  // background: '#333',
-  listStyleType: "none",
-  display:"flex"
-}
 
 export default Banner;

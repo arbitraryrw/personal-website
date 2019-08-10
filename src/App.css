@@ -34,10 +34,17 @@
   }
 }
 
+
+
 .container{
+  /* background-image: url('./dark_light.jpg');
+  background-size: 100%; */
+
   font-family: 'Menlo-Regular', monospace;
   padding: 0 1rem;
-  background-color: #282c34;
+  /* background-color: #282c34; */
+  /* background-image: radial-gradient(#282c34, #2A363B); */
+  background-color: #2A363B;
   font-size: calc(2vmin);
   min-height: 100vh;
   color: white;

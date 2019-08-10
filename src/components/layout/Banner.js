@@ -6,28 +6,28 @@ class Banner extends React.Component {
   super(props);
 
   this.state = {
-    firstRun:true,
+    firstCycle:true,
     text: '',
     isDeleting: false,
     loopNum: 0,
-    typingSpeed: 150
+    typingSpeed: 150,
+    bannerText: [
+      "Hey, I'm Nikola",
+      "I build things",
+      "I break things",
+      "I solve problems"
+    ]
   }
 }
 
   handleType = () => {
     // console.log(this.props.banner)
-    const dataText  = this.props.banner;
-    const { firstRun, isDeleting, loopNum, text, typingSpeed } = this.state;
+    const dataText  = this.state.bannerText;
+    const { firstCycle, isDeleting, loopNum, text, typingSpeed } = this.state;
     const i = loopNum % dataText.length;
-    // console.log(i)
-    let fullText = dataText[i];
+    const fullText = dataText[i];
 
-
-    this.setState({firstRun: firstRun ? false: false});
-
-    if(firstRun){
-      fullText = "Hi, I'm Nikola";
-    }
+    // console.log("Writing: " + fullText + ", index: " + i)
 
     this.setState({
       text: isDeleting ? fullText.substring(0, text.length - 1) : fullText.substring(0, text.length + 1),
@@ -36,15 +36,32 @@ class Banner extends React.Component {
 
     if (!isDeleting && text === fullText) {
 
-      setTimeout(() => this.setState({ isDeleting: true }), 1500);
+      //State change done before timeout, that was a boo boo
+      this.setState({ isDeleting: true });
 
-    } else if (isDeleting && text.length < 1) {
+    } else if (isDeleting && text.length === 0) {
+      // console.log("HIT")
 
-      this.setState({
-        isDeleting: false,
-        loopNum: loopNum + 1
-      });
+      // Get rid of the intro line after the first cycle
+      // This removes the first intro element in the array dataText
+      // component state after completing the first cycle and resets
+      // the loop count.
 
+      if (firstCycle && i+1 === dataText.length){
+        // console.log("We ripping it out!")
+
+        dataText.shift()
+        this.setState({
+          firstCycle: false,
+          isDeleting: false,
+        });
+      }
+      else{
+        this.setState({
+          isDeleting: false,
+          loopNum: loopNum + 1
+        });
+      }
     }
 
     setTimeout(this.handleType, typingSpeed);
@@ -65,13 +82,13 @@ class Banner extends React.Component {
     //
     // ))
     <div>
-    <p style= {{minWidth: '100px', padding:"0", marginBottom:"5px"}} >
+    <p style= {{minWidth: '100px', padding:"0", marginBottom:"5px", fontSize: "5vmin" }} >
       <span>{ this.state.text }</span>
       <span id="cursor"></span>
     </p>
 
     <p style= {{minWidth: '100px', marginTop:"0"}}>
-    Security Specialist / Developer / Reverser
+    Security Specialist / Developer / Reverser Engineer
     </p>
 
     <ul style = {socialMediaStyle} >
@@ -92,7 +109,7 @@ class Banner extends React.Component {
       </li>
       <li  style = {listItemStyle}>
         <a href="#">
-        Git
+        Instagram
         </a>
       </li>
     </ul>
@@ -113,7 +130,7 @@ const socialMediaStyle = {
   color: "#fff",
   padding:"0px",
   listStyle:"none",
-  background: '#333',
+  // background: '#333',
   color: '#fff',
   listStyleType: "none",
   display:"flex"

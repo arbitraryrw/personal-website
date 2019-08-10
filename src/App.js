@@ -33,11 +33,6 @@ class App extends React.Component {
         title: "Post 3",
         completed: false
       }
-    ],
-    bannerText: [
-      "I build things",
-      "I break things",
-      "I solve problems"
     ]
   }
 
@@ -95,13 +90,13 @@ class App extends React.Component {
         <div className="App">
           <div className="container">
 
-            <Header />
+            {/*<Header />*/}
 
             <Route exact path="/" render={props=>(
 
               <React.Fragment>
 
-              <Banner banner={this.state.bannerText}/>
+              <Banner/>
               {/*
                 <AddPost addPost={this.addPost}/>
                 <Posts posts={this.state.posts} markComplete={this.markComplete} deletePost={this.deletePost}/>

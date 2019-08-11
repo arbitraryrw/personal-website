@@ -4,11 +4,8 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 
 import {
  faLinkedin,
- faLinkedinIn,
  faInstagram,
- faGithub,
  faGithubSquare,
- faTwitter,
  faTwitterSquare
 } from '@fortawesome/free-brands-svg-icons';
 
@@ -16,9 +13,7 @@ import { faEnvelope, faKey, faMapMarkerAlt} from '@fortawesome/free-solid-svg-ic
 
 library.add(
  faLinkedin,
- faLinkedinIn,
  faInstagram,
- faGithub,
  faGithubSquare,
  faTwitterSquare,
  faEnvelope,
@@ -40,7 +35,7 @@ library.add(
           </li>
           <li  style = {listItemStyle}>
             <a style = {{color:"grey"}} href="https://github.com/arbitraryrw">
-            <FontAwesomeIcon icon={faGithub} size="2x" />
+            <FontAwesomeIcon icon={faGithubSquare} size="2x" />
             </a>
           </li>
           <li  style = {listItemStyle}>

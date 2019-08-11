@@ -13,10 +13,10 @@ class Banner extends React.Component {
     loopNum: 0,
     typingSpeed: 150,
     bannerText: [
-      "Hey, I'm Nik",
-      "I build things",
-      "I break things",
-      "I solve problems"
+      "Hey, I'm Nik.",
+      "I build things.",
+      "I break things.",
+      "I solve problems."
     ]
   }
 }

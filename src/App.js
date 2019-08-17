@@ -91,21 +91,21 @@ class App extends React.Component {
     return (
       <Router>
         <div className="App">
-          {/*<div className="container">*/}
+          <div className="container">
 
             {/*<Header />*/}
 
             <Route exact path="/" render={props=>(
 
-
-
               <React.Fragment>
-              <div className="container">
 
-              <Banner/>
-
+              <div className="bannerContainer">
+                <Banner/>
               </div>
-              <PostPreviewSection/>
+
+              <div className="postsContainer">
+                <PostPreviewSection posts={this.state.posts}/>
+              </div>
 
               {/*
                 <AddPost addPost={this.addPost}/>
@@ -117,7 +117,7 @@ class App extends React.Component {
 
             <Route path="/about" component={About} />
 
-            {/*</div>*/}
+          </div>
         </div>
       </Router>
     );

@@ -41,17 +41,33 @@
   background-size: 100%; */
 
   font-family: 'Menlo-Regular', monospace;
-  padding: 0 1rem;
   /* background-color: #282c34; */
   /* background-image: radial-gradient(#282c34, #2A363B); */
-  background-color: #2A363B;
+  /* padding: 0 1rem; */
   font-size: calc(2vmin);
+
+}
+
+.bannerContainer{
   min-height: 100vh;
   color: white;
+  background-color: #2A363B;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+}
+
+.postsContainer{
+  min-height: 100vh;
+  color: white;
+  background-color: #37474f;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
 }
 
 .btn {

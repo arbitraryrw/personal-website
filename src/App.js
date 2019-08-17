@@ -5,6 +5,7 @@ import About from './components/pages/About';
 
 import Header from './components/layout/Header';
 import Banner from './components/layout/Banner';
+import PostPreviewSection from './components/layout/PostPreviewSection';
 import SocialMediaIcons from './components/layout/SocialMediaIcons';
 // import Posts from './components/Posts';
 // import AddPost from './components/AddPost';
@@ -90,15 +91,21 @@ class App extends React.Component {
     return (
       <Router>
         <div className="App">
-          <div className="container">
+          {/*<div className="container">*/}
 
             {/*<Header />*/}
 
             <Route exact path="/" render={props=>(
 
+
+
               <React.Fragment>
+              <div className="container">
 
               <Banner/>
+
+              </div>
+              <PostPreviewSection/>
 
               {/*
                 <AddPost addPost={this.addPost}/>
@@ -110,7 +117,7 @@ class App extends React.Component {
 
             <Route path="/about" component={About} />
 
-          </div>
+            {/*</div>*/}
         </div>
       </Router>
     );

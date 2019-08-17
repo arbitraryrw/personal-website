@@ -23,7 +23,7 @@ class App extends React.Component {
     posts: [
       {
         id: uuid.v4(),
-        title: "Builder",
+        title: "Post1",
         completed: false
       },
       {
@@ -83,7 +83,7 @@ class App extends React.Component {
   }
 
   componentDidMount(){
-    axios.get('https://jsonplaceholder.typicode.com/todos?_limit=1').then( resp => this.setState({ posts: resp.data}));
+    // axios.get('https://jsonplaceholder.typicode.com/todos?_limit=1').then( resp => this.setState({ posts: resp.data}));
     // axios.get('https://jsonplaceholder.typicode.com/todos?_limit=10').then( resp => console.log(resp.data));
   }
 

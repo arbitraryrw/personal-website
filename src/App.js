@@ -24,7 +24,10 @@ class App extends React.Component {
       {
         id: uuid.v4(),
         title: "Post1",
-        completed: false
+        completed: false,
+        content: "",
+        author: "Nikola Cucakovic",
+        publishDate: "19/09/2019"
       },
       {
         id: uuid.v4(),

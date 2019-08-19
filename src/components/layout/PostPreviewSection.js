@@ -4,15 +4,19 @@ import PropTypes from 'prop-types'
 class PostPreviewSection extends React.Component {
 
   render(){
-    console.log(this.props.posts)
 
 
+    return (
+      <div>
+      <h1 style = {{textAlign: "center"}}>Blog Posts</h1>
+      <hr style= {{borderWidth: "15px"}}/>
+      { this.props.posts.map((post) => (
+          // <PostItem key={post.id} post={post} markComplete={this.props.markComplete} deletePost={this.props.deletePost}/>
 
-    return this.props.posts.map((post) => (
-      // <PostItem key={post.id} post={post} markComplete={this.props.markComplete} deletePost={this.props.deletePost}/>
-
-      <h1 key ={post.id} style={{padding:"50px"}}> { post.title }</h1>
-    ));
+          <h1 key ={post.id} style={{padding:"50px"}}> { post.title }</h1>
+        )) }
+      </div>
+    );
   }
 }
 

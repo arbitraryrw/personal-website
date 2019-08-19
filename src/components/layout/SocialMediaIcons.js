@@ -29,22 +29,22 @@ library.add(
 
         <ul style = {socialMediaStyle} >
           <li style = {listItemStyle}>
-            <a style = {{color:"grey"}} href="https://twitter.com/arbitraryrw">
+            <a style = {{color:"grey"}} href="https://twitter.com/arbitraryrw" target="_blank">
             <FontAwesomeIcon icon={faTwitterSquare} size="2x" />
             </a>
           </li>
           <li  style = {listItemStyle}>
-            <a style = {{color:"grey"}} href="https://github.com/arbitraryrw">
+            <a style = {{color:"grey"}} href="https://github.com/arbitraryrw" target="_blank">
             <FontAwesomeIcon icon={faGithubSquare} size="2x" />
             </a>
           </li>
           <li  style = {listItemStyle}>
-            <a style = {{color:"grey"}} href="https://www.linkedin.com/in/nikola-cucakovic-623aa677/">
+            <a style = {{color:"grey"}} href="https://www.linkedin.com/in/nikola-cucakovic-623aa677/" target="_blank">
             <FontAwesomeIcon icon={faLinkedin} size="2x" />
             </a>
           </li>
           <li  style = {listItemStyle}>
-            <a style = {{color:"grey"}}href="https://www.instagram.com/nikapotomus/">
+            <a style = {{color:"grey"}}href="https://www.instagram.com/nikapotomus/" target="_blank">
             <FontAwesomeIcon icon={faInstagram} size="2x" />
             </a>
           </li>
